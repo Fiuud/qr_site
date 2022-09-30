@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    {% for student in students %}
+    <div style="margin: 4px" class="col col-auto">
+        <p><b>{{student.date}} {{student.first_name}} {{student.last_name}}</b></p>
+    </div>
+
+    {% endfor %}
+    <img src="{{ qrcode(list_one.id) }}">
+</div>
+
+
+{% endblock %}

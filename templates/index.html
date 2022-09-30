@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Дисциплины</h1>
+    <a href="/create_lesson">
+        <input type="submit" class='btn btn-success' value="Нажми чмо"/>
+    </a>
+    <div style="display: flex; justify-content: space-evenly">
+        <div class="row">
+            {% for item in data %}
+            <div class="col-sm-6">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h1 class="card-title">{{item.title}}</h1>
+                        <a href="/lessons/{{item.id}}">
+                            <input type="submit" class='btn btn-primary' value="Перейти"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--    <div class="row">-->
+<!--        <h1>Дисциплины</h1>-->
+<!--        {% for item in data %}-->
+<!--        <div style="margin: 4px" class="col col-auto">-->
+
+<!--            &lt;!&ndash;            <p><b>{{item.title}}</b></p>&ndash;&gt;-->
+<!--            <a href="/lessons/{{item.id}}">-->
+<!--                <input type="submit" class='btn alert alert-info' value="{{item.title}}"/>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--</div>-->
+{% endblock %}

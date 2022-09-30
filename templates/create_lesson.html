@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<form action="/create_lesson" method = "POST">
+    <input type="text" name="title" id="title" class="form_control" placeholder="Введите название предмета"/><br>
+    <input type="submit" class='btn btn-success' value="Нажми чмо"/>
+</form>
+{% endblock %}

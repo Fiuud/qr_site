@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="user">
+        <p>id {{ lesson.id }}</p>
+        <p> {{ lesson.title }}</p>
+    </div>
+    <div style="display: flex; justify-content: space-evenly" class="my">
+        {% for el in lists %}
+        <div style="margin: 4px" class="col col-auto">
+            <p><b>{{el.date}}</b></p>
+            <a href="/lessons/{{lesson.id}}/{{el.id}}">
+                <input type="submit" class='btn alert alert-info' value="{{el.title}}"/>
+            </a>
+            <!--        <form action="/lessons/{{lesson.id}}/{{el.id}}" method="POST">-->
+            <!--            <input type="submit" class='btn alert alert-info' value="{{el.title}}"/>-->
+            <!--        </form>-->
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
